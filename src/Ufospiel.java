@@ -18,16 +18,17 @@ public class Ufospiel{
 
         dasUfo = new Ufo();
 
-        asteroid1 = new Asteroid();
-        //[...]
-        
-        fuehreAus();
+        asteroid1 = new Asteroid(-70);
+        asteroid2 = new Asteroid(-330);
+        asteroid3 = new Asteroid(430);
+
+        morisaICantMoveItMoveItAnymore();
     }
 
-    public void fuehreAus(){
+    public void morisaICantMoveItMoveItAnymore(){
         while(!tastatur.esc()){           
             asteroid1.bewegeDich();
-            //[...]
+            if(tastatur.links())
 
             Sys.warte();
         }
