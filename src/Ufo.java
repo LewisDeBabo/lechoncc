@@ -1,9 +1,9 @@
 import GLOOP.*;
 public class Ufo{
     public GLTastatur tast;
-    private GLTorus rumpf; 
     private GLKugel cockpit;
-    private GLKegel fluegel1, fluegel2;
+
+    double pX,pY;
 
     public Ufo() {
         cockpit = new GLKugel(0, 0, 0, 25);
@@ -11,21 +11,32 @@ public class Ufo{
     }
 
         public void bewegeLinks() {
-            cockpit.verschiebe(-1,0,0);
+            cockpit.verschiebe(-1.5,0,0);
         }
 
         public void bewegeRechts() {
-            cockpit.verschiebe(1,0,0);
+            cockpit.verschiebe(1.5,0,0);
         }
 
         public void bewegeHoch() {
-            cockpit.verschiebe(0,1,0);
+            cockpit.verschiebe(0,1.5,0);
         }
 
         public void bewegeRunter() {
-            cockpit.verschiebe(0,-1,0);
+            cockpit.verschiebe(0,-1.5,0);
         }
 
         public void explodiere() {
+
         }
-    }
+
+        public double gibX(){
+            return cockpit.gibX();
+        }
+        public double gibY(){
+            return cockpit.gibY();
+        }
+        public double gibZ(){
+            return cockpit.gibZ();
+        }
+}
