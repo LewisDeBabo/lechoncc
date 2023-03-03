@@ -11,24 +11,27 @@ public class Ufo{
     }
 
         public void bewegeLinks() {
-            cockpit.verschiebe(-1.5,0,0);
+            cockpit.verschiebe(-2,0,0);
         }
 
         public void bewegeRechts() {
-            cockpit.verschiebe(1.5,0,0);
+            cockpit.verschiebe(2,0,0);
         }
 
         public void bewegeHoch() {
-            cockpit.verschiebe(0,1.5,0);
+            cockpit.verschiebe(0,2,0);
         }
 
         public void bewegeRunter() {
-            cockpit.verschiebe(0,-1.5,0);
+            cockpit.verschiebe(0,-2,0);
         }
 
-        public void explodiere() {
+    public void explodiere() {
+        double z = Math.random();
+        for (int i=0; i<2000; i++){
 
         }
+    }
 
         public double gibX(){
             return cockpit.gibX();
