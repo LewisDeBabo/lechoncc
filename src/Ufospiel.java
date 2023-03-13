@@ -17,7 +17,11 @@ public class Ufospiel {
         himmel = new GLHimmel("src/img/Sterne.jpg");
 
         dasUfo = new Ufo();
-        nbomba = new Asteroid[]{new Asteroid(0, 0), new Asteroid(0, 0), new Asteroid(0, 0), new Asteroid(0, 0), new Asteroid(0, 0), new Asteroid(0, 0), new Asteroid(0, 0),new Asteroid(0, 0), new Asteroid(0, 0), new Asteroid(0, 0), new Asteroid(0, 0),new Asteroid(0, 0), new Asteroid(0, 0), new Asteroid(0, 0),new Asteroid(0, 0), new Asteroid(0, 0), new Asteroid(0, 0), new Asteroid(0, 0), new Asteroid(0, 0), new Asteroid(0, 0)};
+        nbomba = new Asteroid[20];
+        for (int q=0; q < nbomba.length; q++) {
+            nbomba[q] = new Asteroid(dasUfo, 0, 0);
+        }
+
         for (int i=0 ;i < nbomba.length; i++) {
             nbomba[i].tp(Math.random() * 1000 - 500, 1000 + Math.random() * 1000);
         }

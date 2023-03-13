@@ -2,9 +2,11 @@ import GLOOP.*;
 public class Asteroid{
     public double pX,pY;
     private GLKugel kugel;
+    private Ufo dasUfo;
 
-    public Asteroid(double pX, double pY){
+    public Asteroid(Ufo pUfo, double pX, double pY){
         kugel = new GLKugel(pX,1000,0, 50, "src/img/Krater.jpg");
+        dasUfo = pUfo;
     }
 
     public void bewegeDich(double speed){
@@ -21,6 +23,12 @@ public class Asteroid{
     }
     public double gibZ(){
         return kugel.gibZ();
+    }
+
+    public boolean getroffen(){
+        double abstand = math.sqrt(
+                Math.pow(kugel.gibX()-dasUfo.gibX)
+        )
     }
 
 
