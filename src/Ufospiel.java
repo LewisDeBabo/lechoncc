@@ -10,7 +10,7 @@ public class Ufospiel {
 
 
     public Ufospiel() {
-        kamera = new GLKamera(800, 600);
+        kamera = new GLKamera(1920, 1080);
         kamera.verschiebe(0, 200, 500);
         licht = new GLLicht();
         tastatur = new GLTastatur();
@@ -25,9 +25,6 @@ public class Ufospiel {
         for (int i=0 ;i < nbomba.length; i++) {
             nbomba[i].tp(Math.random() * 1000 - 500, 1000 + Math.random() * 1000);
         }
-
-
-
 
 
         morisaICantMoveItMoveItAnymore();

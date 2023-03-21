@@ -7,7 +7,7 @@ public class Ufo{
 
     public Ufo() {
         cockpit = new GLKugel(0, 0, 0, 25);
-        cockpit.setzeMaterial(GLMaterial.GOLD);
+        cockpit.setzeTextur("src/img/jack black.jpg");
     }
 
         public void bewegeLinks() {
