@@ -32,10 +32,10 @@ public class Ufospiel {
 
     public void morisaICantMoveItMoveItAnymore() {
         while (!tastatur.esc()) {
-            if (tastatur.links() && dasUfo.gibX() > -475) {
+            if (tastatur.links() && dasUfo.gibX() > -575) {
                 dasUfo.bewegeLinks();
             }
-            if (tastatur.rechts() && dasUfo.gibX() < 475) {
+            if (tastatur.rechts() && dasUfo.gibX() < 575) {
                 dasUfo.bewegeRechts();
             }
             if (tastatur.oben() && dasUfo.gibY() < 200) {
@@ -47,7 +47,7 @@ public class Ufospiel {
             for (int i=0 ;i < nbomba.length; i++){
                 nbomba[i].bewegeDich(2.5);
                 if (nbomba[i].gibY() < -1000) {
-                    nbomba[i].tp(Math.random() * 1000 - 500, 1000 + Math.random() * 1000);
+                    nbomba[i].tp(Math.random() * 1400 - 700, 1000 + Math.random() * 1000);
                 }
             }
            /*
