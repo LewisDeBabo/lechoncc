@@ -4,7 +4,10 @@ public class Ufospiel {
     private GLLicht licht;
     private GLTastatur tastatur;
     private GLHimmel himmel;
+    private GLTafel counter;
     Asteroid[] nbomba;
+    Coin[] cashMoneyMula;
+    int zahl=0;
 
     private Ufo dasUfo;
 
@@ -26,11 +29,11 @@ public class Ufospiel {
             nbomba[i].tp(Math.random() * 1000 - 500, 1000 + Math.random() * 1000);
         }
 
-
         morisaICantMoveItMoveItAnymore();
     }
 
     public void morisaICantMoveItMoveItAnymore() {
+        counter = new GLTafel(-800,700,0,0,0);
         while (!tastatur.esc()) {
             if (tastatur.links() && dasUfo.gibX() > -575) {
                 dasUfo.bewegeLinks();
@@ -50,14 +53,12 @@ public class Ufospiel {
                     nbomba[i].tp(Math.random() * 1400 - 700, 1000 + Math.random() * 1000);
                 }
             }
-           /*
-            if (asteroid2.gibY() < -1000) {
-                asteroid2.tp(-330,1200);
+
+            zahl=zahl+1;
+            if ((zahl%10) == 0){
+            counter.setzeText("Deine Punktzahl ist:"+ zahl,25);
             }
-            if (asteroid3.gibY() < -1000) {
-                asteroid3.tp(430,1350);
-            }
-            */Sys.warte();
+            Sys.warte();
         }
         Sys.beenden();
     }
