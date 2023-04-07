@@ -20,13 +20,21 @@ public class Ufospiel {
         himmel = new GLHimmel("src/img/Sterne.jpg");
 
         dasUfo = new Ufo();
-        nbomba = new Asteroid[20];
-        for (int q=0; q < nbomba.length; q++) {
-            nbomba[q] = new Asteroid(dasUfo, 0, 0);
-        }
 
+        nbomba = new Asteroid[20];
+        for (int i=0; i < nbomba.length; i++) {
+            nbomba[i] = new Asteroid(dasUfo, 0, 0);
+        }
         for (int i=0 ;i < nbomba.length; i++) {
             nbomba[i].tp(Math.random() * 1000 - 500, 1000 + Math.random() * 1000);
+        }
+
+        cashMoneyMula = new Coin[10];
+        for (int i=0; i < cashMoneyMula.length; i++) {
+            cashMoneyMula[i] = new Coin(dasUfo, nbomba, 0, 0);
+        }
+        for (int i=0 ;i < cashMoneyMula.length; i++) {
+            cashMoneyMula[i].tePe(Math.random() * 1000 - 500, 1000 + Math.random() * 1000);
         }
 
         morisaICantMoveItMoveItAnymore();
@@ -58,6 +66,15 @@ public class Ufospiel {
             if ((zahl%10) == 0){
             counter.setzeText("Deine Punktzahl ist:"+ zahl,25);
             }
+
+            for (int i=0; i < cashMoneyMula.length; i++) {
+                cashMoneyMula[i].moveitmoveit(2.5);
+                cashMoneyMula[i].spinnaroo(1.0);
+                if (cashMoneyMula[i].gibY() < -1000) {
+                    cashMoneyMula[i].tePe(Math.random() * 1400 - 700, 1000 + Math.random() * 1000);
+                }
+            }
+
             Sys.warte();
         }
         Sys.beenden();

@@ -1,28 +1,52 @@
 import GLOOP.*;
+
+
 public class Coin {
-    private GLZylinder c;
+    private GLZylinder coin;
+    private Asteroid[] Jerome;
     private Ufo dasUfo;
+    private Timer Cooldown;
     double pX, pY;
 
-    public void Dublone(Ufo pUfo, double pX, double pY) {
-        c = new GLZylinder(pX, pY,0,20,10,"src/img/cash.jpg");
+    Coin(Ufo pUfo, Asteroid[] pAsteroid, double pX, double pY) {
+        coin = new GLZylinder(pX, pY,0,20,10,"src/img/cash.jpg");
         dasUfo = pUfo;
+        Jerome = pAsteroid;
+        Cooldown = new Timer();
     }
 
-    public void Spinnaroo(double speedo){
-        c.drehe(0,1 * speedo,0);
-    }
-    public void moveitmoveit(double speed) {
-        c.verschiebe(0, -1 * speed, 0);
-        if (cashgrab()){
-            dasUfo.shine(); //shine macht ufo blinke blinke
+    public void shine(){
+        Cooldown.coolDown();
+        if (Cooldown.coolDownOver() && !shineState) {
+            coin.setzeGlanz(1, 1, 1, 10000000);
+            Cooldown.resetCoolDown(100);
+            Cooldown.coolDown();
+            shineState = true;
+        } else if (Cooldown.coolDownOver() && shineState) {
+            coin.setzeGlanz(1, 1, 1, 0);
+            Cooldown.resetCoolDown(100);
+            Cooldown.coolDown();
+            shineState = false;
         }
+    }
+    public void blink(){
+        coin.setzeGlanz(1,1,1,1);
+    }
+    public void moveitmoveit(double speed){
+        coin.verschiebe(0, -1 * speed, 0);
+        this.shine();
+        if (cashgrab()){
+            this.blink();
+        }
+    }
+    public void spinnaroo(double speedo){
+        coin.drehe(0,1 * speedo,0);
     }
     public boolean cashgrab() {
         double abstand = Math.sqrt(
-                Math.pow(c.gibX() - dasUfo.gibX(), 2) +
-                        Math.pow(c.gibY() - dasUfo.gibY(), 2) +
-                        Math.pow(c.gibZ() - dasUfo.gibZ(), 2)
+                Math.pow(coin.gibX() - dasUfo.gibX(), 2) +
+                        Math.pow(coin.gibY() - dasUfo.gibY(), 2) +
+                        Math.pow(coin.gibZ() - dasUfo.gibZ(), 2)
         );
         if (abstand < 50) {
             return true;
@@ -31,5 +55,12 @@ public class Coin {
             return false;
         }
 
+    }
+    public void tePe(double pX, double pY) {
+        coin.setzePosition(pX, pY, 0);
+    }
+
+    public double gibY() {
+        return coin.gibY();
     }
 }
