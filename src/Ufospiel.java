@@ -158,7 +158,6 @@ public class Ufospiel {
                 Sys.warte();
                 if (dasUfo.explodiert()) {
                     if (zahl > 10000) {
-                        reset();
                         clean();
                         screeen = new GLTafel(0, 250, 0, 2000, 1550, "src/img/happy boi.jpg");
                         screeen.setzeText("You Mad Broski",100);
@@ -175,6 +174,7 @@ public class Ufospiel {
                         screeen.loesche();
                         full();
                     }
+                    reset();
                 }
             }
             Sys.beenden();
