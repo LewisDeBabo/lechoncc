@@ -157,7 +157,6 @@ public class Ufospiel {
                 }
                 Sys.warte();
                 if (dasUfo.explodiert()) {
-                    System.out.println(999999999);
                     if (zahl > 10000) {
                         reset();
                         clean();
@@ -172,7 +171,6 @@ public class Ufospiel {
                         clean();
                         screeen = new GLTafel(0, 250, 0, 2000, 1550, "src/img/sadbarrack.jpg");
                         screeen.setzeText("You Trash Broski",100);
-                        System.out.println(9999999);
                         Sys.warte(5000);
                         screeen.loesche();
                         full();
