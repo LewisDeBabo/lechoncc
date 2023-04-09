@@ -2,6 +2,7 @@ import GLOOP.*;
 public class Ufo{
     public GLTastatur tast;
     private GLKugel cockpit;
+    private boolean explodiert=false;
 
     double pX,pY;
 
@@ -33,7 +34,16 @@ public class Ufo{
             cockpit.drehe (-q,q,q);
             Sys.warte();
         }
-        Sys.beenden();
+        this.teP();
+        explodiert = true;
+    }
+
+    public boolean explodiert(){
+        return explodiert;
+    }
+
+    public void resetExplodiert(){
+        explodiert=false;
     }
 
         public double gibX(){
@@ -45,6 +55,10 @@ public class Ufo{
         public double gibZ(){
             return cockpit.gibZ();
         }
+
+    public void teP() {
+        cockpit.setzePosition(0, 0, 0);
+    }
 
 
 }
