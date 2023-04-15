@@ -57,7 +57,7 @@ public class Timer {
         cMilliseconds = pMs;
     }
     public void coolDown(){
-        System.out.println(cMilliseconds);
+        //System.out.println(cMilliseconds);
         if(cMilliseconds > 0){
             cMilliseconds = cMilliseconds - 2;
             coolDownOver = false;

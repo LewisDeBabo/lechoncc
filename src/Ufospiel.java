@@ -28,12 +28,12 @@ public class Ufospiel {
 
         dasUfo = new Ufo();
 
-        nbomba = new Asteroid[20];
+        nbomba = new Asteroid[30];
         for (int i = 0; i < nbomba.length; i++) {
             nbomba[i] = new Asteroid(dasUfo, 0, 0);
         }
         for (int i = 0; i < nbomba.length; i++) {
-            nbomba[i].tp(Math.random() * 1000 - 500, 1000 + Math.random() * 1000);
+            nbomba[i].tp(Math.random() * 1000 - 500, 1400 + Math.random() * 1000);
         }
         //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         cashMoneyMula = new Coin[10];
@@ -64,7 +64,7 @@ public class Ufospiel {
             cashMoneyMulaB[i].tePee(Math.random() * 1000 - 500, 1000 + Math.random() * 1000);
         }
         for (int i = 0; i < nbomba.length; i++) {
-            nbomba[i].tp(Math.random() * 1000 - 500, 1000 + Math.random() * 1000);
+            nbomba[i].tp(Math.random() * 1000 - 500, 1400 + Math.random() * 1000);
         }
         dasUfo.resetExplodiert();
         counter.setzeText("Deine Punktzahl ist:" + zahl, 100);
@@ -103,7 +103,7 @@ public class Ufospiel {
                 for (int i = 0; i < nbomba.length; i++) {
                     nbomba[i].bewegeDich(2.5);
                     if (nbomba[i].gibY() < -1000) {
-                        nbomba[i].tp(Math.random() * 1400 - 700, 1000 + Math.random() * 1000);
+                        nbomba[i].tp(Math.random() * 1400 - 700, 1400 + Math.random() * 1000);
                     }
                 }
 
@@ -130,6 +130,7 @@ public class Ufospiel {
 
                 for (int i = 0; i < cashMoneyMula.length; i++) {
                     if (cashMoneyMula[i].touch()) {
+                        System.out.println("9999999999");
                         cashMoneyMula[i].tePe(Math.random() * 1400 - 700, 1000 + Math.random() * 1000);
                     }
                 }
@@ -155,6 +156,8 @@ public class Ufospiel {
                         cashMoneyMulaB[i].tePee(Math.random() * 1400 - 700, 1000 + Math.random() * 1000);
                     }
                 }
+
+
                 Sys.warte();
                 if (dasUfo.explodiert()) {
                     if (zahl > 10000) {
