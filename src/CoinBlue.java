@@ -79,13 +79,11 @@ public class CoinBlue {
                             Math.pow(coinB.gibY() - JeromeB[i].gibY(), 2) +
                             Math.pow(coinB.gibZ() - JeromeB[i].gibZ(), 2)
             );
+            if (abstandB < 70) {
+                return true;
+            }
         }
-        if (abstandB < 70) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return false;
     }
 }
 

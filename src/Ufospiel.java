@@ -33,7 +33,7 @@ public class Ufospiel {
             nbomba[i] = new Asteroid(dasUfo, 0, 0);
         }
         for (int i = 0; i < nbomba.length; i++) {
-            nbomba[i].tp(Math.random() * 1000 - 500, 1400 + Math.random() * 1000);
+            nbomba[i].tp(Math.random() * 1400 - 700, 1400 + Math.random() * 1000);
         }
         //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         cashMoneyMula = new Coin[10];
@@ -41,7 +41,7 @@ public class Ufospiel {
             cashMoneyMula[i] = new Coin(dasUfo, nbomba, cashMoneyMulaB, 0, 0);
         }
         for (int i = 0; i < cashMoneyMula.length; i++) {
-            cashMoneyMula[i].tePe(Math.random() * 1000 - 500, 1000 + Math.random() * 1000);
+            cashMoneyMula[i].tePe(Math.random() * 1400 - 700, 1000 + Math.random() * 1000);
         }
         //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         cashMoneyMulaB = new CoinBlue[2];
@@ -49,7 +49,7 @@ public class Ufospiel {
             cashMoneyMulaB[i] = new CoinBlue(dasUfo, nbomba, cashMoneyMula, 0, 0);
         }
         for (int i = 0; i < cashMoneyMulaB.length; i++) {
-            cashMoneyMulaB[i].tePee(Math.random() * 1000 - 500, 1000 + Math.random() * 1000);
+            cashMoneyMulaB[i].tePee(Math.random() * 1400 - 700, 1000 + Math.random() * 1000);
         }
 
         morisaICantMoveItMoveItAnymore();
@@ -58,13 +58,13 @@ public class Ufospiel {
     public void reset(){
         zahl=0;
         for (int i = 0; i < cashMoneyMula.length; i++) {
-            cashMoneyMula[i].tePe(Math.random() * 1000 - 500, 1000 + Math.random() * 1000);
+            cashMoneyMula[i].tePe(Math.random() * 1400 - 700, 1000 + Math.random() * 1000);
         }
         for (int i = 0; i < cashMoneyMulaB.length; i++) {
-            cashMoneyMulaB[i].tePee(Math.random() * 1000 - 500, 1000 + Math.random() * 1000);
+            cashMoneyMulaB[i].tePee(Math.random() * 1400 - 700, 1000 + Math.random() * 1000);
         }
         for (int i = 0; i < nbomba.length; i++) {
-            nbomba[i].tp(Math.random() * 1000 - 500, 1400 + Math.random() * 1000);
+            nbomba[i].tp(Math.random() * 1400 - 700, 1400 + Math.random() * 1000);
         }
         dasUfo.resetExplodiert();
         counter.setzeText("Deine Punktzahl ist:" + zahl, 100);
